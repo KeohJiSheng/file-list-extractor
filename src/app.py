@@ -36,12 +36,10 @@ class FileListExtractor(ctk.CTk):
             font=ctk.CTkFont(size=13), height=36, corner_radius=8)
         self.folder_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
         ctk.CTkButton(row1, text="Browse", width=100, height=36,
-            fg_color="#1f6feb", hover_color="#388bfd",
-            font=ctk.CTkFont(size=13, weight="bold"),
+            fg_color="#1f6feb", hover_color="#388bfd", font=ctk.CTkFont(size=13, weight="bold"),
             corner_radius=8, command=self._browse).pack(side="left")
         ctk.CTkButton(row1, text="Extract", width=100, height=36,
-            fg_color="#238636", hover_color="#2ea043",
-            font=ctk.CTkFont(size=13, weight="bold"),
+            fg_color="#238636", hover_color="#2ea043", font=ctk.CTkFont(size=13, weight="bold"),
             corner_radius=8, command=self._extract).pack(side="left", padx=(10, 0))
 
         row2 = ctk.CTkFrame(inner, fg_color="transparent")
