@@ -22,13 +22,11 @@ class FileListExtractor(ctk.CTk):
         ctk.CTkLabel(title_frame, text="File List Extractor",
             font=ctk.CTkFont(family="Segoe UI", size=18, weight="bold"),
             text_color="#e0e0e0").pack(side="left", padx=20, pady=14)
-
         ctrl = ctk.CTkFrame(self, fg_color="#151515", corner_radius=0, height=110)
         ctrl.pack(fill="x")
         ctrl.pack_propagate(False)
         inner = ctk.CTkFrame(ctrl, fg_color="transparent")
         inner.pack(fill="x", padx=20, pady=12)
-
         row1 = ctk.CTkFrame(inner, fg_color="transparent")
         row1.pack(fill="x", pady=(0, 8))
         self.folder_entry = ctk.CTkEntry(row1, placeholder_text="Select a folder...",
@@ -41,7 +39,6 @@ class FileListExtractor(ctk.CTk):
         ctk.CTkButton(row1, text="Extract", width=100, height=36,
             fg_color="#238636", hover_color="#2ea043", font=ctk.CTkFont(size=13, weight="bold"),
             corner_radius=8, command=self._extract).pack(side="left", padx=(10, 0))
-
         row2 = ctk.CTkFrame(inner, fg_color="transparent")
         row2.pack(fill="x")
         self.include_ext_var = ctk.BooleanVar(value=True)
@@ -56,35 +53,29 @@ class FileListExtractor(ctk.CTk):
         ctk.CTkCheckBox(row2, text="Show full path", variable=self.show_full_path_var,
             font=ctk.CTkFont(size=12), text_color="#a0a0a0", fg_color="#1f6feb",
             hover_color="#388bfd", border_color="#444444", checkmark_color="white").pack(side="left")
-
         ctk.CTkFrame(self, fg_color="#2a2a2a", height=1, corner_radius=0).pack(fill="x")
         self.status_label = ctk.CTkLabel(self, text="No folder selected.",
             font=ctk.CTkFont(size=11), text_color="#606060", anchor="w")
         self.status_label.pack(fill="x", padx=20, pady=(6,2))
-
         text_frame = ctk.CTkFrame(self, fg_color="#111111", corner_radius=10)
         text_frame.pack(fill="both", expand=True, padx=16, pady=(0,8))
         self.textbox = ctk.CTkTextbox(text_frame, fg_color="#111111", text_color="#d0d0d0",
             font=ctk.CTkFont(family="Consolas", size=12), border_width=0, corner_radius=10)
         self.textbox.pack(fill="both", expand=True, padx=4, pady=4)
-
         btn_bar = ctk.CTkFrame(self, fg_color="#151515", corner_radius=0, height=52)
         btn_bar.pack(fill="x")
         btn_bar.pack_propagate(False)
         bi = ctk.CTkFrame(btn_bar, fg_color="transparent")
         bi.pack(side="right", padx=16, pady=10)
-        ctk.CTkButton(bi, text="Copy to Clipboard", width=160, height=32,
-            fg_color="#2d2d2d", hover_color="#3d3d3d", font=ctk.CTkFont(size=12),
-            corner_radius=8, border_width=1, border_color="#444444",
-            command=self._copy).pack(side="left", padx=(0,8))
-        ctk.CTkButton(bi, text="Save as TXT", width=140, height=32,
-            fg_color="#2d2d2d", hover_color="#3d3d3d", font=ctk.CTkFont(size=12),
-            corner_radius=8, border_width=1, border_color="#444444",
-            command=self._save).pack(side="left", padx=(0,8))
-        ctk.CTkButton(bi, text="Clear", width=90, height=32,
-            fg_color="#2d2d2d", hover_color="#3a1a1a", font=ctk.CTkFont(size=12),
-            corner_radius=8, border_width=1, border_color="#444444",
-            command=self._clear).pack(side="left")
+        ctk.CTkButton(bi, text="Copy to Clipboard", width=160, height=32, fg_color="#2d2d2d",
+            hover_color="#3d3d3d", font=ctk.CTkFont(size=12), corner_radius=8,
+            border_width=1, border_color="#444444", command=self._copy).pack(side="left", padx=(0,8))
+        ctk.CTkButton(bi, text="Save as TXT", width=140, height=32, fg_color="#2d2d2d",
+            hover_color="#3d3d3d", font=ctk.CTkFont(size=12), corner_radius=8,
+            border_width=1, border_color="#444444", command=self._save).pack(side="left", padx=(0,8))
+        ctk.CTkButton(bi, text="Clear", width=90, height=32, fg_color="#2d2d2d",
+            hover_color="#3a1a1a", font=ctk.CTkFont(size=12), corner_radius=8,
+            border_width=1, border_color="#444444", command=self._clear).pack(side="left")
 
     def _browse(self):
         folder = filedialog.askdirectory(title="Select Folder")
