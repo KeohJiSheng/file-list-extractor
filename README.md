@@ -1,2 +1,2 @@
 # File List Extractor
-A Windows desktop app to extract and list files from any folder.
+Windows app to extract file lists from folders.
